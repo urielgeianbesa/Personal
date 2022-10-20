@@ -1,0 +1,26 @@
+public class App {
+    public static void main(String[] args) throws Exception {
+      char[] myname = {'U','R','I','E','L'};
+      // System.out.println(myname[0]);
+      // System.out.println(myname[1]);
+      // System.out.println(myname[2]);
+      // System.out.println(myname[3]);
+      // System.out.println(myname[4]);
+
+      // for (int i = 0; i < myname.length; i++) {
+      //   System.out.println(myname[i]);
+      // }
+      
+      // for (int i = myname.length - 1; i >= 0 ; i--) {
+      //   System.out.println(myname[i]);
+      // }
+
+      for(int x = 0; x < myname.length; x++){
+       if (!(myname[x] == 'A' || myname[x] == 'E' || myname[x] == 'I' || myname[x] == 'O' || myname[x] == 'U')){
+
+       System.out.println(myname[x]);
+       
+      }
+    }
+  }
+}
