@@ -1,0 +1,41 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class ThursdayNew {
+
+	public static void main(String[] args) {
+		ArrayList<Integer> arr = new ArrayList<>();
+		arr.add(15);
+	    arr.add(30);
+	    arr.add(25);
+	    arr.add(19);
+	    arr.add(30);
+	    arr.add(40);
+	    
+	    Scanner sc= new Scanner(System.in);
+	    
+	    while(arr.size()>0)
+	    	
+	    {
+	    	System.out.print("new list: "); // display all the remaining number in my array
+	    	
+	    	for(int num_list=0; num_list < arr.size();num_list++)
+	    	{
+	    		System.out.print(arr.get(num_list) + " ");
+	    	}
+	    	
+	    	//get the input of the user
+	    	System.out.println("\n Please input a number:");
+	    	int number = sc.nextInt();
+	    	
+	    	for(int x=0; x<arr.size();x++)
+	    	{
+	    		if(number==arr.get(x))
+	    		{
+	    			arr.remove(x);
+	    		}
+	    	}
+	    }
+	    System.out.println("Array is Empty");
+	}
+}
