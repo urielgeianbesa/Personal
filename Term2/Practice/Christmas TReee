@@ -1,1 +1,40 @@
-
+import java.util.Scanner;  
+public class A  
+{  
+static Scanner scan = new Scanner(System.in);
+public static void main(String args[])   
+{   
+//	A
+System.out.print("What Is your Name: ");
+String Name = scan.next();
+System.out.print("Merry Christmas! " + Name + "\n");  
+int h = 13;
+// Upper part  
+for(int i = 1;i <= h;i++)  
+{  
+for(int j = h-i;j > 0;j--)  
+{  
+System.out.print(" ");  
+}  
+for(int k = 1;k <= i;k++)  
+{  
+System.out.print("* ");  
+}  
+System.out.println();  
+}  
+// Lower Part
+for(int i = 1;i <= 3-1;i++)  
+{  
+System.out.print(" ");  
+for(int j = h-4;j > 0;j--)  
+{  
+System.out.print(" ");  
+}  
+for(int k = 3;k > 0;k--)  
+{  
+System.out.print("* ");  
+}  
+System.out.println();  
+}
+}  
+} 
