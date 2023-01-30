@@ -1,0 +1,68 @@
+import java.util.Scanner;
+
+
+public class Exam {
+	public static int EuclidAlgorithm(int numerator, int denominator) {
+		if ((numerator == 0) || (denominator == 0)){
+			return 0;
+		}
+		int remainder;
+		remainder = (int) (numerator % denominator);
+		if (remainder != 0) {
+			return EuclidAlgorithm(denominator, remainder); 
+		} else {
+			return denominator;
+			
+		}
+	}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.print("Enter numerator: ");
+		int numerator = sc.nextInt();
+		
+		System.out.print("Enter denominator: ");
+		int denominator = sc.nextInt();
+		
+		sc.close();
+		int GCD = EuclidAlgorithm (numerator, denominator);
+		System.out.println("GCD: " + GCD );
+		
+		 int digit,digitSum,temp;
+		 int digits,digitSums,temps;
+		 
+
+	        //Initilizing temp variable with the entered number
+	        temp = numerator;
+
+	        //For loop for the iteration till temp number is greater than 0
+	        for(digitSum = 0; temp > 0; temp /= 10){
+	            //Applying Modulation on temp variable
+	            digit = temp % 10;
+	            //Applying the formula to get the sum
+	            digitSum = (digitSum * 10) + digit;
+	        }
+	        //Checking if entered number is equal to the formula sum
+	        if(digitSum == numerator) {
+	            //If Yes, Then it is a palindrom number
+	            System.out.println(numerator+" IS A PALINDROME NUMBER");
+	        }else{
+	            //If No, Then it is not a palindrom number
+	            System.out.println(numerator+" IS A NOT PALINDROME NUMBER");
+	        }
+	        temps = denominator;
+	        for(digitSums = 0; temps > 0; temps /= 10){
+	            digits = temps % 10;
+	            digitSums = (digitSums * 10) + digits;
+	        }
+	        if(digitSum == denominator) {
+	            System.out.println(denominator+" IS A PALINDROME NUMBER");
+	        }else{
+	            System.out.println(denominator+" IS A NOT PALINDROME NUMBER");
+	        }
+	       System.out.println("Suggested Password : " + numerator+"-"+denominator+"-"+GCD );                                                                                                        
+
+	        	
+	        }
+	    }
