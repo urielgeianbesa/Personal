@@ -1,0 +1,28 @@
+package feb6;
+
+public class Construction {
+	   String name;
+	   String gender;
+	   double weight;
+	   int numofJowa;
+
+	   Construction(String name, String gender, double weight, int jowa){
+	      this.name = name;
+	      this.gender = gender;
+	      this.weight = weight;
+	      this.numofJowa = numofJowa;
+	      
+	   }
+	   public void printinfo () {
+		System.out.println("Name\t: \t" + name + "\n" + "Gender\t: \t" + gender + "\n" + "Weight\t: \t" + weight + "\n" + "Jowa\t: \t" + numofJowa + "\n" );
+		}
+	   public static void main(String[] args) {
+		   Construction x = new Construction("Alex", "Male", 54.8, 2);
+		   Construction y = new Construction("David", "Male", 64.0, 8);
+		   Construction z = new Construction("Mark", "Male", 70.1, 1);
+		   System.out.println(x.name + "\n" + x.gender + "\n" + x.weight + "\n" + x.numofJowa + "\n");
+		   System.out.println(y.name + "\n" + y.gender + "\n" + y.weight + "\n" + y.numofJowa + "\n");
+		   System.out.println(z.name + "\n" + z.gender + "\n" + z.weight + "\n" + z.numofJowa + "\n");
+	   }
+}
+
