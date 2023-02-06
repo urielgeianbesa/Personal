@@ -1,0 +1,23 @@
+import java.util.Scanner;
+public class Act1 {
+    public static void main(String[] args) {
+    	//String method
+		Scanner sc = new Scanner(System.in); //Instantiated Scanner
+		System.out.print("Enter a Positive Number = "); //Ask user what number he/she want's to factorial
+		int number = sc.nextInt(); 
+        int factorial = (int) multiplyNumbers(number);
+        if (number >= 1) { // If number is positive it will print out the factorial. If not it will print error
+           System.out.println("Factorial of " + number + " = " + factorial);
+        }
+        else {
+        	System.out.println("Error! Negative Number is prohibited");
+        }
+    }
+    // Factorial method
+    public static int multiplyNumbers(int number){ //Initially, the multiplyNumbers() is called from the main() function with number which is the user input passed as an argument
+        if (number >= 1) // if number(UserInput) is greater than or equal to 1
+            return number * multiplyNumbers(number - 1);//Number(UserInput) will multiplied to the result of multiplyNumbers() where (number(UserInput) -1) is passed. Since, it is called from the same function, it is a recursive call.
+        else
+            return 1;
+    }
+}
