@@ -1,0 +1,265 @@
+
+public class Activity3 {
+	static java.util.Scanner sc = new java.util.Scanner(System.in);
+	
+	public static void main(String[] args) {
+		System.out.print("Enter the size of figure: ");
+		int n = sc.nextInt();
+		
+//		System.out.println("Pick a letter A, B, C, D, E, F, G, H, I ");
+//		System.out.print("Enter Here the letter: ");
+//		String letter = sc.next();
+//		String x = letter;
+//		
+//		String a = lefttriangle( n );
+//		String b = invertedlefttriangle( n );
+//		
+//		String figure = "";
+//		Switch (x){
+//			figure = "";
+		
+		 System.out.println("Lefttriangle:"+"\n"+lefttriangle( n ));
+		 System.out.println("Invertedlefttriangle:"+"\n"+invertedlefttriangle( n ));
+		 System.out.println("Lefthollowtriangle:"+"\n"+lefthollowtriangle( n ));
+		 System.out.println("InvertedLefthollowtriangle:"+"\n"+invertedlefthollowtriangle( n ));
+		 System.out.println("Righttriangle:"+"\n"+righttriangle( n ));
+		 System.out.println("InvertedRighttriangle:"+"\n"+Invertedrighttriangle( n ));
+		 System.out.println("Righthollowtriangle:"+"\n"+righthollowtriangle( n ));
+		 System.out.println("Invertedrighthollowtriangle:"+"\n"+Invertedrighthollowtriangle( n ));
+		 System.out.println("Fulltriangle:"+"\n"+Fulltriangle( n ));
+		 System.out.println("Fulltriangle:"+"\n"+InvertedFulltriangle( n ));
+		 System.out.println("Fullhollowtriangle:"+"\n"+Fullhollowtriangle( n ));
+		 System.out.println("InvertedFullhollowtriangle:"+"\n"+InvertedFullhollowtriangle( n ));
+		 System.out.println("Halfllefttdiamond:"+"\n"+Halflleftdiamond( n ));
+		
+	}
+	
+	public static String lefttriangle(int n ) {
+		String figure = "";
+
+        for(int r = 1; r <= n; r++) {
+            for(int c = 1; c <= r; c++) {
+            	figure += "*  ";
+            }
+            figure += "\n";
+
+        }		
+		return figure;
+	   }
+	
+	public static String invertedlefttriangle(int n) {
+		String figure = "";
+		for(int r = n; r >= 1; r--) {
+			for(int c = 1; c <= r; c++) {
+				figure += "*  ";
+			}
+			figure += "\n";
+		}
+		return figure;
+	}
+	public static String lefthollowtriangle(int n) {
+		String figure = "";
+		
+		for(int r = 1; r <= n; r++) {
+			for(int c = 1; c <= r; c++) {
+				if(c==1 || r==n || c==r) {
+					figure += "*  ";
+				}
+				else{
+					figure += "   ";;
+				}
+			}
+		 figure += "\n";
+		}
+	return figure;
+	}
+	public static String invertedlefthollowtriangle(int n) {
+		String figure = "";
+		
+		for(int r = n; r >= 1; r--) {
+			for(int c = 1; c <= r; c++) {
+				if(c==1 || r==n || c==r) {
+					figure += "*  ";
+				}
+				else{
+					figure += "   ";;
+				}
+			}
+		 figure += "\n";
+		}
+	return figure;
+	}
+	public static String righttriangle(int n) {
+		String figure = "";
+		
+		for(int r = 1; r <= n; r++) {
+			for(int s = n; s >= r; s-=1) {
+					figure += "   ";
+					
+		}
+			for(int o = 1; o <= r; o++ ) {
+				figure += "*  ";
+			}
+			 figure += "\n";
+		}
+		return figure;
+	}
+	
+	public static String Invertedrighttriangle(int n) {
+		String figure = "";
+		
+		for(int r = n; r >= 1; r--) {
+			for(int s = n; s >= r; s-=1) {
+					figure += "   ";
+					
+		}
+			for(int o = 1; o <= r; o++ ) {
+				figure += "*  ";
+			}
+			 figure += "\n";
+		}
+		return figure;
+	}
+	public static String righthollowtriangle(int n) {
+		String figure = "";
+		
+		for(int r = 1; r <= n; r++) {
+			for(int s = n; s >= r; s-=1) {
+					figure += "   ";
+					
+		}
+			for(int o = 1; o <= r; o++ ) {
+				if(o==1||r==n|o==r) {
+					figure += "*  ";
+				}
+				else {
+					figure += "   ";
+				}
+			}
+			 figure += "\n";
+		}
+		return figure;
+	}
+	public static String Invertedrighthollowtriangle(int n) {
+		String figure = "";
+		
+		for(int r = n; r >= 1; r--) {
+			for(int s = n; s >= r; s-=1) {
+					figure += "   ";
+					
+		}
+			for(int o = 1; o <= r; o++ ) {
+				if(o==1||r==n|o==r) {
+					figure += "*  ";
+				}
+				else {
+					figure += "   ";
+				}
+			}
+			 figure += "\n";
+		}
+		return figure;
+	}
+	public static String Fulltriangle(int n) {
+		String figure = "";
+		
+		for(int r = 1; r <= n; r++) {
+			for(int s = n; s >= r; s-=1) {
+					figure += "   ";
+					
+		}
+			for(int o = 1; o <= r*2-1; o++ ) {
+					figure += "*  ";
+
+			}
+			 figure += "\n";
+		}
+		return figure;
+	}
+	public static String InvertedFulltriangle(int n) {
+		String figure = "";
+		
+		for(int r = n; r >= 1; r--) {
+			for(int s = n; s >= r; s-=1) {
+					figure += "   ";
+					
+		}
+			for(int o = 1; o <= r*2-1; o++ ) {
+					figure += "*  ";
+
+			}
+			 figure += "\n";
+		}
+		return figure;
+	}
+	public static String Fullhollowtriangle(int n) {
+		String figure = "";
+		
+		for(int r = 1; r <= n; r++) {
+			for(int s = n; s >= r; s-=1) {
+					figure += "   ";
+					
+		}
+			for(int o = 1; o <= r*2-1; o++ ) {
+				if(o==1||r==n||o==r*2-1) {
+					figure += "*  ";}
+				else 
+					figure += "   ";
+
+			}
+			 figure += "\n";
+		}
+		return figure;
+	}
+	public static String InvertedFullhollowtriangle(int n) {
+		String figure = "";
+		
+		for(int r = n; r >= 1; r--) {
+			for(int s = n; s >= r; s-=1) {
+					figure += "   ";
+					
+		}
+			for(int o = 1; o <= r*2-1; o++ ) {
+				if(o==1||r==n||o==r*2-1) {
+					figure += "*  ";}
+				else 
+					figure += "   ";
+
+			}
+			 figure += "\n";
+		}
+		return figure;
+	}
+	public static String Halflleftdiamond(int n) {
+		String figure = "";
+		
+		for(int r = 1; r <= n/2; r++) {
+			for(int o = 1; o <= r; o++) {
+					figure += "*  ";
+			}
+			 figure += "\n";
+		
+		
+		for(r = n/2+1; r >= 1; r--) {
+			for(int o = 1; o <= r; o++ ) {
+					figure += "*  ";
+					}
+		}
+		
+		
+			 figure += "\n";
+	}
+
+
+		return figure;
+}
+	
+	
+
+	
+}
+	
+		
+
+
+		
