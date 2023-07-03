@@ -1,0 +1,242 @@
+package com.example.personalbackground;
+
+import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.CheckBox;
+import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.Toast;
+import androidx.appcompat.app.AppCompatActivity;
+
+public class EducationalBackground extends AppCompatActivity {
+    private CheckBox elementaryCheckBox, secondaryCheckBox, vocationalCheckBox, collegeCheckBox, graduateCheckBox;
+    private EditText elementarySchoolEditText1, secondarySchoolEditText1, vocationalSchoolEditText1, collegeSchoolEditText1, graduateSchoolEditText1,elementarySchoolEditText2, secondarySchoolEditText2, vocationalSchoolEditText2, collegeSchoolEditText2, graduateSchoolEditText2;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_educational_background);
+
+        elementaryCheckBox = findViewById(R.id.Elementary);
+        secondaryCheckBox = findViewById(R.id.Secondary);
+        vocationalCheckBox = findViewById(R.id.Vocational);
+        collegeCheckBox = findViewById(R.id.College);
+        graduateCheckBox = findViewById(R.id.Graduate);
+
+        elementarySchoolEditText1 = findViewById(R.id.Elementary1);
+        secondarySchoolEditText1 = findViewById(R.id.Secondary1);
+        vocationalSchoolEditText1 = findViewById(R.id.Vocational1);
+        collegeSchoolEditText1 = findViewById(R.id.College1);
+        graduateSchoolEditText1 = findViewById(R.id.Graduate1);
+
+        elementarySchoolEditText2 = findViewById(R.id.Elementary2);
+        secondarySchoolEditText2 = findViewById(R.id.Secondary2);
+        vocationalSchoolEditText2 = findViewById(R.id.Vocational2);
+        collegeSchoolEditText2 = findViewById(R.id.College2);
+        graduateSchoolEditText2 = findViewById(R.id.Graduate2);
+
+        elementaryCheckBox.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                if (elementaryCheckBox.isChecked()) {
+                    elementaryCheckBox.setEnabled(true);
+                    secondaryCheckBox.setEnabled(false);
+                    vocationalCheckBox.setEnabled(false);
+                    collegeCheckBox.setEnabled(false);
+                    graduateCheckBox.setEnabled(false);
+                    elementarySchoolEditText1.setEnabled(true);
+                    elementarySchoolEditText2.setEnabled(true);
+                    secondarySchoolEditText1.setEnabled(false);
+                    secondarySchoolEditText2.setEnabled(false);
+                    vocationalSchoolEditText1.setEnabled(false);
+                    vocationalSchoolEditText2.setEnabled(false);
+                    collegeSchoolEditText1.setEnabled(false);
+                    collegeSchoolEditText2.setEnabled(false);
+                    graduateSchoolEditText1.setEnabled(false);
+                    graduateSchoolEditText2.setEnabled(false);
+
+                } else {
+                    elementarySchoolEditText1.setEnabled(false);
+                    elementarySchoolEditText2.setEnabled(false);
+                    secondaryCheckBox.setEnabled(true);
+                    vocationalCheckBox.setEnabled(true);
+                    collegeCheckBox.setEnabled(true);
+                    graduateCheckBox.setEnabled(true);
+                    elementarySchoolEditText1.setText("");
+                }
+            }
+        });
+
+        secondaryCheckBox.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (secondaryCheckBox.isChecked()) {
+                    elementaryCheckBox.setEnabled(false);
+                    secondaryCheckBox.setEnabled(true);
+                    vocationalCheckBox.setEnabled(false);
+                    collegeCheckBox.setEnabled(false);
+                    graduateCheckBox.setEnabled(false);
+                    secondarySchoolEditText1.setEnabled(true);
+                    secondarySchoolEditText2.setEnabled(true);
+                } else {
+                    elementaryCheckBox.setEnabled(true);
+                    vocationalCheckBox.setEnabled(true);
+                    collegeCheckBox.setEnabled(true);
+                    graduateCheckBox.setEnabled(true);
+                    secondarySchoolEditText1.setEnabled(false);
+                    secondarySchoolEditText2.setEnabled(false);
+                    secondarySchoolEditText1.setText("");
+                }
+            }
+        });
+
+        vocationalCheckBox.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (vocationalCheckBox.isChecked()) {
+                    elementaryCheckBox.setEnabled(false);
+                    secondaryCheckBox.setEnabled(false);
+                    vocationalCheckBox.setEnabled(true);
+                    collegeCheckBox.setEnabled(false);
+                    graduateCheckBox.setEnabled(false);
+                    vocationalSchoolEditText1.setEnabled(true);
+                    vocationalSchoolEditText2.setEnabled(true);
+                } else {
+                    elementaryCheckBox.setEnabled(true);
+                    secondaryCheckBox.setEnabled(true);
+                    collegeCheckBox.setEnabled(true);
+                    graduateCheckBox.setEnabled(true);
+                    vocationalSchoolEditText1.setEnabled(false);
+                    vocationalSchoolEditText2.setEnabled(false);
+                    vocationalSchoolEditText1.setText("");
+                }
+            }
+        });
+
+        collegeCheckBox.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (collegeCheckBox.isChecked()) {
+                    elementaryCheckBox.setEnabled(false);
+                    secondaryCheckBox.setEnabled(false);
+                    vocationalCheckBox.setEnabled(false);
+                    collegeCheckBox.setEnabled(true);
+                    graduateCheckBox.setEnabled(false);
+                    collegeSchoolEditText1.setEnabled(true);
+                    collegeSchoolEditText2.setEnabled(true);
+                } else {
+                    elementaryCheckBox.setEnabled(true);
+                    secondaryCheckBox.setEnabled(true);
+                    vocationalCheckBox.setEnabled(true);
+                    graduateCheckBox.setEnabled(true);
+                    collegeSchoolEditText1.setEnabled(false);
+                    collegeSchoolEditText2.setEnabled(false);
+                    collegeSchoolEditText1.setText("");
+                }
+            }
+        });
+
+        graduateCheckBox.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (graduateCheckBox.isChecked()) {
+                    elementaryCheckBox.setEnabled(false);
+                    secondaryCheckBox.setEnabled(false);
+                    vocationalCheckBox.setEnabled(false);
+                    collegeCheckBox.setEnabled(false);
+                    graduateCheckBox.setEnabled(true);
+                    graduateSchoolEditText1.setEnabled(true);
+                    graduateSchoolEditText2.setEnabled(true);
+                } else {
+                    elementaryCheckBox.setEnabled(true);
+                    secondaryCheckBox.setEnabled(true);
+                    vocationalCheckBox.setEnabled(true);
+                    collegeCheckBox.setEnabled(true);
+                    graduateSchoolEditText1.setEnabled(false);
+                    graduateSchoolEditText2.setEnabled(false);
+                    graduateSchoolEditText1.setText("");
+                }
+            }
+        });
+    }
+
+    public void next2(View view) {
+        Intent Intent = getIntent();
+        String Firstname = Intent.getStringExtra("Firstname");
+        String Lastname = Intent.getStringExtra("LastName");
+        String Email = Intent.getStringExtra("Email");
+        String Ename = Intent.getStringExtra("Ename");
+        String isMale = Intent.getStringExtra("isMale");
+        String isFemale = Intent.getStringExtra("isFemale");
+        String isSingle = Intent.getStringExtra("isSingle");
+        String isMarried = Intent.getStringExtra("isMarried");
+        String isSeparated = Intent.getStringExtra("isSeparated");
+        String isWidowed = Intent.getStringExtra("isWidowed");
+        String isOthers = Intent.getStringExtra("isOthers");
+        int parsedphone = Intent.getIntExtra("parsedphone", 0);
+        int parsedHeight = Intent.getIntExtra("parsedHeight", 0);
+        int parsedWeight = Intent.getIntExtra("parsedWeight", 0);
+        int parsedTin = Intent.getIntExtra("parsedTin", 0);
+        int parsedpagibig = Intent.getIntExtra("parsedpagibig", 0);
+        int parsedgsis = Intent.getIntExtra("parsedgsis", 0);
+        int parsedPH = Intent.getIntExtra("parsedPH", 0);
+        int parsedEcontact = Intent.getIntExtra("parsedEcontact", 0);
+
+
+        if (elementaryCheckBox.isChecked() && elementarySchoolEditText1.getText().toString().isEmpty() && elementarySchoolEditText2.getText().toString().isEmpty()
+                || secondaryCheckBox.isChecked() && secondarySchoolEditText1.getText().toString().isEmpty() && secondarySchoolEditText2.getText().toString().isEmpty()
+                || vocationalCheckBox.isChecked() && vocationalSchoolEditText1.getText().toString().isEmpty() && vocationalSchoolEditText2.getText().toString().isEmpty()
+                || collegeCheckBox.isChecked() && collegeSchoolEditText1.getText().toString().isEmpty() && collegeSchoolEditText2.getText().toString().isEmpty()
+                || graduateCheckBox.isChecked() && graduateSchoolEditText1.getText().toString().isEmpty() && graduateSchoolEditText2.getText().toString().isEmpty()) {
+            Toast.makeText(this, "Please fill in all necessary information", Toast.LENGTH_SHORT).show();
+        } else {
+            String Elementary1 = elementarySchoolEditText1.getText().toString();
+            String Elementary2 = elementarySchoolEditText2.getText().toString();
+            String Secondary1 = secondarySchoolEditText1.getText().toString();
+            String Secondary2 = secondarySchoolEditText2.getText().toString();
+            String vocational1 = vocationalSchoolEditText1.getText().toString();
+            String vocational2 = vocationalSchoolEditText2.getText().toString();
+            String college1 = collegeSchoolEditText1.getText().toString();
+            String college2 = collegeSchoolEditText2.getText().toString();
+            String graduate1 = graduateSchoolEditText1.getText().toString();
+            String graduate2 = graduateSchoolEditText2.getText().toString();
+
+            Intent i = new Intent(EducationalBackground.this, CriminalBackground.class);
+            i.putExtra("Firstname", Firstname);
+            i.putExtra("Lastname", Lastname);
+            i.putExtra("Email", Email);
+            i.putExtra("parsedphone", parsedphone);
+            i.putExtra("parsedHeight", parsedHeight);
+            i.putExtra("parsedWeight", parsedWeight);
+            i.putExtra("parsedTin", parsedTin);
+            i.putExtra("parsedpagibig", parsedpagibig);
+            i.putExtra("parsedPH", parsedPH);
+            i.putExtra("parsedgsis", parsedgsis);
+            i.putExtra("Ename", Ename);
+            i.putExtra("parsedEcontact", parsedEcontact);
+            i.putExtra("isMale", isMale);
+            i.putExtra("isFemale", isFemale);
+            i.putExtra("isSingle", isSingle);
+            i.putExtra("isMarried", isMarried);
+            i.putExtra("isSeparated", isSeparated);
+            i.putExtra("isWidowed", isWidowed);
+            i.putExtra("isOthers", isOthers);
+
+            i.putExtra("Elementary1", Elementary1);
+            i.putExtra("Elementary2", Elementary2);
+            i.putExtra("Secondary1", Secondary1);
+            i.putExtra("Secondary2", Secondary2);
+            i.putExtra("vocational1", vocational1);
+            i.putExtra("vocational2", vocational2);
+            i.putExtra("college1", college1);
+            i.putExtra("college2", college2);
+            i.putExtra("graduate1", graduate1);
+            i.putExtra("graduate2", graduate2);
+            startActivity(i);
+        }
+    }
+}
